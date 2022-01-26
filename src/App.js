@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import { action,originals, horror } from './urls';
+import NavBar from './Components/NavBar/NavBar';
+import Banner from './Components/Banner/Banner';
 import './App.css';
+import RowPost from './Components/RowPost/RowPost';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <Banner/>
+      <RowPost url={originals} title="Netflix Originals" />
+      <RowPost url={action} title="Action" isSmall />
+      <RowPost url={horror} title="Horror" isSmall />
     </div>
   );
 }
 
 export default App;
+
+// https://api.themoviedb.org/3/movie/550?api_key=70b0f6dd60e7d6eba7f271024d0eb5c5
+// 70b0f6dd60e7d6eba7f271024d0eb5c5
